@@ -1,439 +1,1344 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="images/DAPPMC FINAL LOGO.png" type="image/ico" />
-    <title>DAPPMC</title>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>DAPPMC - Homepage</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- Favicons -->
+  <link href="assets/img/DAPPMC FINAL LOGO login.png" rel="icon">
+  <link href="assets/img/DAPPMC FINAL LOGO login.png" rel="logo-touch-icon">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-   <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- owl css file -->
+  <link href="assets/css/bootstrapTheme.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
 
-    <!-- Custom Theme Style -->
-    <link href="build/css/custom.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-      }
-      table, th, td {
-        border: 1px solid black;
-      }
-      th, td {
-        padding: 8px;
-        text-align: left;
-      }
-      #saveBtn {
-        display: none;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
-      #saveBtn:hover {
-        background-color: #45a049;
-      }
-      canvas {
-      margin-top: 20px;
-      max-width: 800px;
+  <!-- Owl Carousel Assets -->
+  <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
+  <link href="owl-carousel/owl.theme.css" rel="stylesheet">
+  <style>
+    /* Sleek & Professional Style */
+    .top-header {
+      background-color: #01234B;
+      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
+      margin-top: -15px;
+      margin-bottom: -15px;
     }
-    #fileInput, #doneBtn {
-      margin-top: 20px;
+
+    .top-header .contact-info span,
+    .top-header .contact-info i {
+      color: #C6B350;
     }
-    #doneBtn {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
+
+    .top-header .social-links a {
+      color: #C6B350;
+      margin: 0 20px;
+      font-size: 20px;
+    }
+
+    .top-header .search-button {
+      padding: 15px;
+      color: #C6B350;
+      font-weight: 700;
+      font-size: 25px;
       border: none;
-      cursor: pointer;
+      background: none;
+      margin-top: 25px;
+      margin-bottom: -15px;
     }
-    #doneBtn:hover {
-      background-color: #45a049;
+
+    .top-header .search-bar .search-input {
+      width: 0;
+      opacity: 0;
+      border: none;
+      border-radius: 25px;
+      margin-top: 38px;
+      padding: 15px;
+      background-color: #fff;
+      transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
-    </style>
-  </head>
-  <body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><img src="images/DAPPMC FINAL LOGO.png" alt="DAPPMC logo" class="img-circle profile_img" style="width: 40px; height: 40px; margin:auto;">
-                <span> DAPPMC</span>
-              </a>
-            </div>
 
-            <div class="clearfix"></div>
+    .top-header .search-bar.active .search-input {
+      width: 325px;
+      opacity: 1;
+    }
 
-            <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="images/default.png" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome User</span>
-                <h2>ID: 0921386</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
+    @media (max-width: 768px) {
 
-            <br />
+      .top-header .contact-info,
+      .top-header .social-links,
+      .top-header .search-bar {
+        margin-top: 10px;
+        justify-content: center;
+      }
 
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <h3>Manage</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="index.html">Dashboard</a></li>
-                      <li><a href="content.html">Content</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div class="menu_section">
-                <h3>Users</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-users"></i> Accounts <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="add_account.html">Add Account</a></li>
-                      <li><a href="account_list.html">Account List</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-exclamation"></i>Actions<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="recent_actions.html">Recent Actions</a></li>
-                      <li><a href="account_log.html">Account Logs</a></li>
-                    </ul>
-                  </li>          
-                </ul>
-              </div>
-            </div>
-            <!-- /sidebar menu -->
+      .top-header .suggestions-list {
+        width: 65%;
+      }
+    }
 
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
-          </div>
+    /* Section Background */
+    .experience-metrics-section {
+      /* background: linear-gradient(135deg, #007bff 40%, #00c0ef 100%); */
+      background-color: #01234B;
+      padding: 60px 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Metric Card Design */
+    .metric-card {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Hover Effects */
+    .metric-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Decorative Element - Background */
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 100px;
+      height: 100px;
+      background-color: rgba(0, 123, 255, 0.1);
+      border-radius: 50%;
+      transition: transform 0.5s ease;
+    }
+
+    /* Decorative Element - Hover Effect */
+    .metric-card:hover::before {
+      transform: scale(1.5);
+    }
+
+    /* Metric Heading */
+    .metric-card h2 {
+      font-size: 3em;
+      color: #C6B350;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    /* Metric Description */
+    .metric-card p {
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .metric-card {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <header id="top-header" class="top-header d-flex align-items-center">
+    <div class="container-fluid container-xl">
+      <div class="row align-items-center justify-content-between" style="margin-top: 5px;">
+
+        <!-- Contact Info Column -->
+        <div class="col-lg-5 contact-info d-flex">
+          <i class="bi bi-envelope"></i> <span style=" color: #fff;margin-left: 5px;">dchikoronadal@gmail.com</span>
+          <i class="bi bi-telephone ms-4"></i><span style=" color: #fff;margin-left: 5px;"> (083) 228 - 2202</span>
         </div>
 
-        <!-- top navigation -->
-        <div class="top_nav">
-            <div class="nav_menu">
-                <div class="nav toggle">
-                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                </div>
-                <nav class="nav navbar-nav">
-                <ul class=" navbar-right">
-                  <li class="nav-item dropdown open" style="padding-left: 15px;">
-                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      <img src="images/default.png" alt="">ID: 0921386
-                    </a>
-                    <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item"  href="javascript:;"> Profile</a>
-                        <a class="dropdown-item"  href="javascript:;">
-                          <span class="badge bg-red pull-right">50%</span>
-                          <span>Settings</span>
-                        </a>
-                    <a class="dropdown-item"  href="javascript:;">Help</a>
-                      <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-                    </div>
-                  </li>
-  
-                  <li role="presentation" class="nav-item dropdown open">
-                    <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                      <i class="fa fa-envelope-o"></i>
-                      <span class="badge bg-green">6</span>
-                    </a>
-                    <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-                      <li class="nav-item">
-                        <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                          <span>
-                            <span>John Smith</span>
-                            <span class="time">3 mins ago</span>
-                          </span>
-                          <span class="message">
-                            Film festivals used to be do-or-die moments for movie makers. They were where...
-                          </span>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                          <span>
-                            <span>John Smith</span>
-                            <span class="time">3 mins ago</span>
-                          </span>
-                          <span class="message">
-                            Film festivals used to be do-or-die moments for movie makers. They were where...
-                          </span>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                          <span>
-                            <span>John Smith</span>
-                            <span class="time">3 mins ago</span>
-                          </span>
-                          <span class="message">
-                            Film festivals used to be do-or-die moments for movie makers. They were where...
-                          </span>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                          <span>
-                            <span>John Smith</span>
-                            <span class="time">3 mins ago</span>
-                          </span>
-                          <span class="message">
-                            Film festivals used to be do-or-die moments for movie makers. They were where...
-                          </span>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <div class="text-center">
-                          <a class="dropdown-item">
-                            <strong>See All Alerts</strong>
-                            <i class="fa fa-angle-right"></i>
-                          </a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        <!-- /top navigation -->
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>Accounts List</h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5  form-group row pull-right top_search">
-                  <div class="input-group">
-                   <span>
-                      <i class="fa fa-users"></i> Accounts / Account List
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-              <div class="clearfix"></div>
-
-              <div class="col-md-12 col-sm-12  ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>User's Account List</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-
-                  <div class="x_content">
-                    <h1>Upload and Display Excel Data</h1>
-                    <input type="file" id="fileInput" />
-                    <!-- <canvas id="myChart"></canvas> -->
-                    <button id="doneBtn">Done & Refresh Data</button>
-                    <table id="dataTable" class="table-bordered"></table>
-                    <script>
-                        // Check if data exists in localStorage and display it
-                        if (localStorage.getItem('excelData')) {
-                          const storedData = JSON.parse(localStorage.getItem('excelData'));
-                          displayDataInTable(storedData);
-                        }
-                    
-                        let jsonData = [];
-                    
-                        // Handle file upload and read data
-                        document.getElementById('fileInput').addEventListener('change', function(e) {
-                          var file = e.target.files[0];
-                          var reader = new FileReader();
-                    
-                          reader.onload = function(event) {
-                            var data = new Uint8Array(event.target.result);
-                            var workbook = XLSX.read(data, { type: 'array' });
-                    
-                            // Get the first sheet name
-                            var sheetName = workbook.SheetNames[0];
-                    
-                            // Get the sheet data
-                            var worksheet = workbook.Sheets[sheetName];
-                    
-                            // Convert sheet data to JSON
-                            jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-                    
-                            // Save the data in localStorage
-                            localStorage.setItem('excelData', JSON.stringify(jsonData));
-                    
-                            // Display the data in the table
-                            displayDataInTable(jsonData);
-                          };
-                    
-                          reader.readAsArrayBuffer(file);
-                        });
-                    
-                        // Function to display data in table
-                        function displayDataInTable(data) {
-                          var table = document.getElementById('dataTable');
-                          table.innerHTML = ''; // Clear previous data
-                    
-                          // Loop through the data and append rows to the table
-                          data.forEach(function(rowData, rowIndex) {
-                            var row = document.createElement('tr');
-                    
-                            rowData.forEach(function(cellData) {
-                              var cell = rowIndex === 0 ? document.createElement('th') : document.createElement('td');
-                              cell.textContent = cellData;
-                              row.appendChild(cell);
-                            });
-                    
-                            table.appendChild(row);
-                          });
-                        }
-                    
-                        // Handle "Done" button to refresh data
-                        document.getElementById('doneBtn').addEventListener('click', function() {
-                          // Clear the stored data and refresh the page
-                          localStorage.removeItem('excelData');
-                          location.reload();
-                        });
-                      </script>
-                    <script>
-                      document.getElementById('fileInput').addEventListener('change', function(e) {
-                        var file = e.target.files[0];
-                        var reader = new FileReader();
-                  
-                        reader.onload = function(event) {
-                          var data = new Uint8Array(event.target.result);
-                          var workbook = XLSX.read(data, { type: 'array' });
-                  
-                          var sheetName = workbook.SheetNames[0];
-                  
-                          var worksheet = workbook.Sheets[sheetName];
-                  
-                          var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-                  
-                          displayDataInTable(jsonData);
-                  
-                          document.getElementById('saveBtn').style.display = 'block';
-                  
-                          document.getElementById('saveBtn').addEventListener('click', function() {
-                            saveTableToExcel(jsonData, "exported_data.xlsx");
-                          });
-                        };
-                  
-                        reader.readAsArrayBuffer(file);
-                      });
-                  
-                      function displayDataInTable(data) {
-                        var table = document.getElementById('dataTable');
-                        table.innerHTML = ''; // Clear previous data
-                  
-                        // Loop through the data and append rows to the table
-                        data.forEach(function(rowData, rowIndex) {
-                          var row = document.createElement('tr');
-                  
-                          rowData.forEach(function(cellData) {
-                            var cell = rowIndex === 0 ? document.createElement('th') : document.createElement('td');
-                            cell.textContent = cellData;
-                            row.appendChild(cell);
-                          });
-                  
-                          table.appendChild(row);
-                        });
-                      }
-                  
-                      function saveTableToExcel(data, filename) {
-                        var ws = XLSX.utils.aoa_to_sheet(data);
-                        var wb = XLSX.utils.book_new();
-                        XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-                        XLSX.writeFile(wb, filename);
-                      }
-                    </script>
-							
-						
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- Social Links Column -->
+        <div class="col-lg-3 social-links text-center">
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
         </div>
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
+        <!-- Search Bar with Autocomplete -->
+        <div class="col-lg-4 d-flex justify-content-center search-bar">
+          <form action="404.html" method="GET" class="d-flex" autocomplete="off">
+            <i class="bi bi-search search-button"></i>
+            <input type="text" id="search-input" name="query" placeholder="Search..." class="search-input"
+              oninput="showSuggestions()" />
+            <ul id="suggestions-list" class="suggestions-list"></ul>
+          </form>
+        </div>
       </div>
     </div>
+  </header>
 
-    <!-- jQuery -->
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-   <script src="vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js"></script>
-    <!-- iCheck -->
-    <script src="vendors/iCheck/icheck.min.js"></script>
+  <header id="header" class="header d-flex align-items-center ">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-    <!-- Custom Theme Scripts -->
-    <script src="build/js/custom.min.js"></script>
-  </body>
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="img/DAPPMC FINAL LOGO login.png" alt="">
+        <h1 class="sitename">DAPPMC</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+
+          <li class="dropdown"><a href="#services"><span>Services</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="services/laboratory.html">Laboratory</a></li>
+              <li><a href="services/heart-station.html">Heart Station</a></li>
+              <li><a href="services/pulmonary-services.html">Pulmonary Services</a></li>
+              <li><a href="services/physical-medicine-&-rehabilitaion.html">Physical Medicine & Rehabilitation</a></li>
+              <li><a href="services/service-and-facilities.html">Services and Facilities</a></li>
+              <li><a href="services/accommodations.html">Accommodations</a></li>
+
+              <li><a href="services.html">View All Services...<i class="bi bi-arrow-right"></i></a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href=""><span>Guides</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <!-- <li><a href="vision-mission.html">Patient's Guide</a></li> -->
+              <!-- <li><a href="patients-guide.html">Patient's Guide</a></li> -->
+              <li><a href="visitor-guide.html">Visitor's Guidelines</a></li>
+              <li><a href="admission.html">Addmission Procedure</a></li>
+              <li><a href="">Discharge Procedure</a></li>
+              <li><a href="billing&payment.html">Billing & Payment</a></li>
+              <li><a href="medical-records.html">Medical Records</a></li>
+              <li><a href="patient-rights.html">Patients Rights/Responsibilities</a></li>
+              <!-- <li><a href="philhealth.html">PhilHealth Accredation</a></li> -->
+            </ul>
+          </li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li class="dropdown"><a href="#event"><span>News&Events</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="news.html">News</a></li>
+              <li><a href="events.html">Events</a></li>
+              <!-- <li><a href="reviews.html">Reviews</a></li> -->
+              <!-- <li class="dropdown"><a href="#news"><span>Conferences</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Latest Updates</a></li>
+                  <li><a href="#">Recent Updates</a></li>
+                </ul>
+              </li> -->
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#about"><span>About</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="about.html">About DAPPMC</a></li>
+              <!-- <li><a href="leadership.html">Leadership</a></li> -->
+              <!-- <li><a href="departments/department.html">Departments</a></li> -->
+              <li><a href="accredited-hmos.html">Accredited HMOs </a></li>
+              <li><a href="certificates&awards.html">Awards And Certificates</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="privacy&policy.html">Privacy Policy</a></li>
+          </li>
+          <!-- <li class="dropdown"><a href="departments/department.html"><span>Departments</span>
+            <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">HIS</a></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </li> -->
+        </ul>
+        </li>
+        <li class="dropdown"><a href="#event"><span>What's New</span><i
+              class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="promo-packages.html">Promo & Packages</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <!-- <li class="dropdown"><a href="#news"><span>News</span> <i
+                  class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#">Latest Updates</a></li>
+                <li><a href="#">Recent Updates</a></li>
+              </ul>
+            </li> -->
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="online-services/index.html">Online Services</a>
+
+    </div>
+  </header>
+  <main class="main">
+    <style>
+      .hero-logo {
+        max-width: 205px;
+        margin-bottom: 20px;
+        margin-top: -90px;
+      }
+
+      @media (max-width: 768px) {
+        n .hero-logo {
+          max-width: 150px;
+        }
+      }
+    </style>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section img-background">
+      <div class="container">
+        <div class="row gy-4 d-flex flex-column align-items-center justify-content-center">
+          <br>
+          <div class="col-lg-6 text-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="img/DAPPMC FINAL LOGO login.png" class="img-fluid mb-1 hero-logo " alt="DAPPMC Logo">
+            <h2 style="font-family: Copperplate Gothic;">DR. ARTURO P. PINGOY <p
+                style="font-family: Copperplate Gothic;border-top: 3px solid #023878;color: white; width: 100%; margin: 0 auto;">
+              </p>MEDICAL CENTER</h2>
+            <h3 style="font-family: Copperplate Gothic;font-size: 20px; color: #C6B350;">Service - Commitment -
+              Excellence</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients">
+      <div class="container" data-aos="zoom-in">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 20
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 30
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 40
+                },
+                "992": {
+                  "slidesPerView": 5,
+                  "spaceBetween": 50
+                },
+                "1200": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 60
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="img/HMOs/1coophealth.png" class="img-fluid" alt="Avega"></div>
+            <div class="swiper-slide"><img src="img/HMOs/amaphil-logo.png" class="img-fluid" alt="BPI-Philam">
+            </div>
+            <div class="swiper-slide"><img src="img/HMOs/avega.png" class="img-fluid" alt="BPLAC"></div>
+            <div class="swiper-slide"><img src="img/HMOs/benlife.png" class="img-fluid" alt="Caritas">
+            </div>
+            <div class="swiper-slide"><img src="img/HMOs/cocolife.png" class="img-fluid" alt="CP000722"></div>
+            <div class="swiper-slide"><img src="img/HMOs/etiqa.jpg" class="img-fluid" alt="Generali"></div>
+            <div class="swiper-slide"><img src="img/HMOs/forticare.png" class="img-fluid" alt="Partner"></div>
+            <div class="swiper-slide"><img src="img/HMOs/generali.png" class="img-fluid" alt="Partner"></div>
+            <div class="swiper-slide"><img src="img/HMOs/getwell health.png" class="img-fluid" alt="Intellicare">
+            </div>
+            <div class="swiper-slide"><img src="img/HMOs/health-plan.png" class="img-fluid" alt="Kaiser"></div>
+            <div class="swiper-slide"><img src="img/HMOs/inlife health care.jpg" class="img-fluid" alt="LHN"></div>
+            <div class="swiper-slide"><img src="img/HMOs/intellicare.png" class="img-fluid" alt="Maxicare"></div>
+            <div class="swiper-slide"><img src="img/HMOs/lifeandhealth.jpg" class="img-fluid" alt="MED-1"></div>
+            <div class="swiper-slide"><img src="img/HMOs/maxicare.jpg" class="img-fluid" alt="MedAsia">
+            </div>
+            <div class="swiper-slide"><img src="img/HMOs/medasia.png" class="img-fluid" alt="Medicard"></div>
+            <div class="swiper-slide"><img src="img/HMOs/medilink-logo.png" class="img-fluid" alt="New VC"></div>
+            <div class="swiper-slide"><img src="img/HMOs/medocare.png" class="img-fluid" alt="Philcare"></div>
+            <div class="swiper-slide"><img src="img/HMOs/pacificcross.png" class="img-fluid" alt="Pro-TMB"></div>
+            <div class="swiper-slide"><img src="img/HMOs/philcare-new-logo.jpg" class="img-fluid" alt="Starcare"></div>
+            <div class="swiper-slide"><img src="img/HMOs/sunlife.png" class="img-fluid" alt="New VC"></div>
+            <div class="swiper-slide"><img src="img/HMOs/valucare.png" class="img-fluid" alt="Philcare"></div>
+            <div class="swiper-slide"><img src="img/HMOs/wellcare.png" class="img-fluid" alt="Pro-TMB"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Clients Section -->
+    <style>
+      .clients .swiper-wrapper {
+        align-items: center;
+      }
+
+      .clients .swiper-slide img {
+        width: 100%;
+        height: auto;
+        max-width: 150px;
+        margin: auto;
+      }
+    </style>
+    <section id="carousel" class="">
+      <div class="carousel-container" data-aos="fade-up">
+        <div class="carousel">
+          <div class="carousel-slide active">
+            <img src="img/content/1.png" alt="Slide 1">
+          </div>
+          <div class="carousel-slide">
+            <img src="img/content/2.png" alt="Slide 2">
+          </div>
+          <div class="carousel-slide">
+            <img src="img/content/4.png" alt="Slide 3">
+          </div>
+          <!-- Add more slides as needed -->
+        </div>
+
+        <!-- Carousel Controls -->
+        <div class="carousel-controls">
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+        </div>
+
+        <!-- Carousel Selectors/Indicators -->
+        <div class="carousel-indicators">
+          <span class="indicator active" data-slide="0"></span>
+          <span class="indicator" data-slide="1"></span>
+          <span class="indicator" data-slide="2"></span>
+          <!-- Add more indicators as needed -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About Us</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-md-6 content">
+            <div class="about-image" data-aos="fade-right" data-aos-delay="500">
+              <img src="img/bg.png" alt="About Us Image"
+                style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+            </div>
+          </div>
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              The Hospital was established by spouses Arturo P. Pingoy, MD and Amparo Y. Pinggoy, MD on May 12, 1961.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> <span>In 1971, four private air-conditioned rooms were put up,
+                  followed by the construction of a two-storey building that housed 8 private rooms and 4 suite rooms in
+                  1974.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>In 1998, the hospital’s bed capacity was expanded to 50 with
+                  the construction of 40 private rooms, financed by the Land Bank of the Philippines.....</span></li>
+            </ul>
+
+            <p>
+              In May 2012, the construction of a new building began, expanding the hospital into a premier facility with
+              a 3-storey building. This new addition will house patient rooms, doctors’ clinics, commercial spaces, and
+              a medical arts area. The hospital has also been recognized by PhilHealth as a Center of Safety and a
+              Center of Quality.
+            </p>
+            <div class="social-links d-flex">
+              <a href="" class="me-2" title="Twitter"><i class="bi bi-twitter"></i></a>
+              <a href="" class="me-2" title="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="" class="me-2" title="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="" class="me-2" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <a href="about.html" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About Section -->
+    <section>
+      <div class="experience-metrics-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <!-- Metric 1: 115 Years of Experience -->
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center mb-4">
+              <div class="metric-card">
+                <h2>63+</h2>
+                <p>Years of Experience</p>
+              </div>
+            </div>
+
+            <!-- Metric 2: 25,000+ Patients Annually -->
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center mb-4">
+              <div class="metric-card">
+                <h2>25,000+</h2>
+                <p>Patients Annually</p>
+              </div>
+            </div>
+
+            <!-- Metric 3: 100+ Doctors on Staff -->
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center mb-4">
+              <div class="metric-card">
+                <h2>100+</h2>
+                <p>Doctors on Staff</p>
+              </div>
+            </div>
+
+            <!-- Metric 4: 5-Star Patient Satisfaction -->
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center mb-4">
+              <div class="metric-card">
+                <h2>5-Star</h2>
+                <p>Patient Satisfaction</p>
+              </div>
+            </div>
+
+            <!-- Metric 5: State-of-the-Art Facilities -->
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center mb-4">
+              <div class="metric-card">
+                <h2>State-of-the-Art</h2>
+                <p>Facilities</p>
+              </div>
+            </div>
+
+            <!-- Metric 6: 20+ Specialties -->
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center mb-4">
+              <div class="metric-card">
+                <h2>20+</h2>
+                <p>Medical Specialties</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- Why Us Section -->
+    <section id="why-us" class="section why-us light-background" data-builder="section">
+
+      <div class="container-fluid container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+
+            <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+              <h3><span>Client's Common Questions</span> <strong>That We Might Have Answers</strong></h3>
+              <p>
+              </p>
+            </div>
+
+            <div class="faq-container px-xl-5">
+
+              <div class="faq-item faq-active" data-aos="fade-right" data-aos-delay="200">
+
+                <h3><span>01</span> What services does the hospital provide?</h3>
+                <div class="faq-content">
+                  <p>Our hospital offers a wide range of services, including emergency care, inpatient and outpatient
+                    surgery, diagnostic imaging, maternity care, pediatric care, cardiology, orthopedics, and more. For
+                    a complete list of services and specialties, please visit our Services page on our website or
+                    contact our customer service.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-right" data-aos-delay="300">
+                <h3><span>02</span> What are the hospital’s visitor policies?</h3>
+                <div class="faq-content">
+                  <p>Our visitor policies vary by department and the patient’s condition. Generally, visitors are
+                    allowed between 9:00 AM and 8:00 PM. For specific details or restrictions, please contact the
+                    patient’s nursing station or check our website for the latest visitor guidelines.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-right" data-aos-delay="400">
+                <h3><span>03</span> What are the hospital’s operating hours?</h3>
+                <div class="faq-content">
+                  <p>Our hospital is open 24/7 for emergency services. For non-emergency services, our general operating
+                    hours are Monday through Friday from 8:00 AM to 5:00 PM. Some departments may have different hours,
+                    so please check with the specific department for details.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2 why-us-img">
+            <img src="img/ask.png" class="img-fluid" alt="" data-aos="fade-left" data-aos-delay="100">
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /Why Us Section -->
+    <style>
+      .gallery-item {
+        margin-bottom: 30px;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .gallery-item img:hover {
+        transform: scale(1.05);
+      }
+    </style>
+    <section id="facilities" class="facilities-section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Facilities</h2>
+      </div>
+      <!-- End Section Title -->
+      <div class="container gallery-container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="100">
+            <a href="img/DAPPMC/Emergency/DSC_0086.JPG" class="glightbox-facilities">
+              <img src="img/DAPPMC/Emergency/DSC_0086.JPG" class="img-fluid" alt="Facility 1">
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="200">
+            <a href="img/DAPPMC/LAboratory/DSC_0106.JPG" class="glightbox-facilities">
+              <img src="img/DAPPMC/LAboratory/DSC_0106.JPG" class="img-fluid" alt="Facility 2">
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="300">
+            <a href="img/DAPPMC/LAboratory/DSC_0060.JPG" class="glightbox-facilities">
+              <img src="img/DAPPMC/LAboratory/DSC_0060.JPG" class="img-fluid" alt="Facility 3">
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="400">
+            <a href="img/DAPPMC/RADIOLOGY DEPARTMENT/DSC_0026.JPG" class="glightbox-facilities">
+              <img src="img/DAPPMC/RADIOLOGY DEPARTMENT/DSC_0026.JPG" class="img-fluid" alt="Facility 4">
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="500">
+            <a href="img/DAPPMC/OPD/DSC_0124.JPG" class="glightbox-facilities">
+              <img src="img/DAPPMC/OPD/DSC_0124.JPG" class="img-fluid" alt="Facility 5">
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="600">
+            <a href="img/DAPPMC/LAboratory/DSC_0121.JPG" class="glightbox-facilities">
+              <img src="img/DAPPMC/LAboratory/DSC_0121.JPG" class="img-fluid" alt="Facility 6">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .news-section {
+        padding: 60px 0;
+      }
+
+      .news-item {
+        margin-bottom: 30px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .news-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .news-card img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .news-content {
+        padding: 15px;
+      }
+
+      .news-content h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .news-content p {
+        font-size: 14px;
+        color: #777;
+      }
+
+      .read-more-btn {
+        display: inline-block;
+        margin-top: 10px;
+        color: #023878;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .read-more-btn:hover {
+        text-decoration: underline;
+      }
+
+      .view-more-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #023878;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .view-more-btn:hover {
+        background-color: #0056b3;
+      }
+
+      .news-item:hover {
+        transform: translateY(-5px);
+      }
+    </style>
+    <section id="news" class="news-section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Latest News</h2>
+      </div>
+      <!-- End Section Title -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 news-item">
+            <div class="news-card" data-aos="fade-right" data-aos-delay="100">
+              <img src="img/60-day.PNG" class="img-fluid" alt="News 1" style="width: 540px;height: 200px;">
+              <div class="news-content">
+                <h4>DAPPMC's 60-day</h4>
+                <p>Launching of DAPPMC's 60-day celebration of its 60th Anniversary</p>
+                <a href="news-details.html" class="read-more-btn">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 news-item">
+            <div class="news-card" data-aos="fade-up" data-aos-delay="100">
+              <img src="img/disabilities.PNG" class="img-fluid" alt="News 2" style="width: 540px;height: 200px;">
+              <div class="news-content">
+                <h4>International Day of Persons with Disabilities</h4>
+                <p>He survived stroke and got rehabilitated | DAPPMC, PARM Mindanao Celebrates International Day of
+                  Persons with Disabilities</p>
+                <a href="news-details-2.html" class="read-more-btn">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 news-item">
+            <div class="news-card" data-aos="fade-left" data-aos-delay="100">
+              <img src="img/HIV-available.PNG" class="img-fluid" alt="News 3">
+              <div class="news-content">
+                <h4>DAPPMC HIV TREATMENT HUB</h4>
+                <p>HIV Treatment Hub is now at Dr. Arturo P. Pingoy Medical Center</p>
+                <a href="news-details-3.html" class="read-more-btn">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <a href="news.html" class="view-more-btn">View More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .info-wrap {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+
+      .info-item {
+        display: flex;
+      }
+
+      .info-item i {
+        font-size: 32px;
+        color: #0056b3;
+        margin-right: 15px;
+      }
+
+      .info-item h3 {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .info-item p {
+        margin: 0;
+        font-size: 14px;
+      }
+    </style>
+    <!-- Call To Action Section -->
+    <section id="contact" class="contact section container">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact Us</h2>
+        <ul>
+          <p>Receive a response within 24 hours of your inquiry</p>
+          <p>Clear and concise communication via email</li>
+          <p>Efficient handling and resolution of your concerns</p>
+        </ul>
+        <p><strong>Contact us for your concerns and be part of DAPPMC updates below.</strong></p>
+        <br>
+        <span>
+          <a href="contact.html" class="contact-us" data-aos="fade-up" data-aos-delay="100"><span>Submit here</span><i
+              class="bi bi-envelope"></i></a>
+        </span>
+      </div><!-- End Section Title -->
+
+      <!-- Info Wrap -->
+      <div class="info-wrap d-flex flex-column flex-md-row justify-content-between align-items-start"
+        style="margin-top: -20px;">
+        <div class="info-item d-flex align-items-start" data-aos="fade-up" data-aos-delay="200">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div class="ps-3">
+            <h3>Address</h3>
+            <p>General Santos Drive, Zone IV, City of Koronadal</p>
+          </div>
+        </div><!-- End Info Item -->
+
+        <div class="info-item d-flex align-items-start" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-telephone flex-shrink-0"></i>
+          <div class="ps-3">
+            <h3>Call Us</h3>
+            <p>(083) 228-2202</p>
+          </div>
+        </div><!-- End Info Item -->
+
+        <div class="info-item d-flex align-items-start" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div class="ps-3">
+            <h3>Email Us</h3>
+            <p>sample@example.com</p>
+          </div>
+        </div><!-- End Info Item -->
+      </div><!-- End Info Wrap -->
+    </section><!-- /Call To Action Section -->
+
+    <style>
+      /* Service Item Styling */
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .service-card:hover {
+        transform: scale(1.05);
+      }
+
+      .card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+        filter: blur(0px);
+      }
+
+      /* Zoom and blur effect on hover */
+      .service-card:hover .card-img {
+        transform: scale(1.1);
+        filter: blur(5px);
+      }
+
+      /* Card overlay for the title and description */
+      .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        /* Dark overlay for contrast */
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .service-card:hover .card-overlay {
+        opacity: 1;
+      }
+
+      /* Title and description within the overlay */
+      .card-overlay h4 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+      }
+
+      .card-overlay ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      .card-overlay a {
+        color: #C6B350;
+        text-decoration: none;
+      }
+
+      .card-overlay a:hover {
+        text-decoration: underline;
+      }
+
+      /* General Section Styling */
+      /* .services {
+        padding: 60px 0;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        text-align: center;
+      } */
+
+      /* Read More Button */
+      .read-more {
+        margin-top: 20px;
+        display: inline-block;
+        padding: 10px 20px;
+        background: #023878;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 25px;
+        transition: background 0.3s ease;
+      }
+
+      .read-more:hover {
+        background: #C6B350;
+        color: #fff;
+      }
+
+      /* Responsive Styling */
+      @media (max-width: 768px) {
+        .service-card {
+          margin-bottom: 20px;
+        }
+
+        .card-overlay h4 {
+          font-size: 1.1rem;
+        }
+
+        .card-overlay ul {
+          font-size: 0.85rem;
+        }
+
+        .read-more {
+          font-size: 0.9rem;
+          padding: 8px 16px;
+        }
+      }
+    </style>
+    <!-- Services Section -->
+    <section id="services" class="services section light-background">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+      </div><!-- End Section Title -->
+      <div class="container">
+        <div class="row gy-4">
+          <!-- Laboratory Card -->
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="service-card">
+                <img src="img/DAPPMC/LAboratory/DSC_0057.JPG" class="card-img" alt="Laboratory Image">
+                <div class="card-overlay">
+                  <h4><a href="services/laboratory.html" class="stretched-link">Laboratory</a></h4>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Heart Station Card -->
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="service-card">
+                <img src="img/DAPPMC/Heart Station/DSC_0036.JPG" class="card-img" alt="Heart Station Image">
+                <div class="card-overlay">
+                  <h4><a href="services/heart-station.html" class="stretched-link">Heart Station</a></h4>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Physical Medicine & Rehabilitation Card -->
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="service-card">
+                <img src="img/DAPPMC/RADIOLOGY DEPARTMENT/DSC_0063.JPG" class="card-img" alt="Physical Medicine Image">
+                <div class="card-overlay">
+                  <h4><a href="services/physical-medicine-&-rehabilitaion.html" class="stretched-link">Radiology
+                      Department</a></h4>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Services and Facilities Card -->
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="service-card">
+                <img src="img/DAPPMC/OPD/DSC_0124.JPG" class="card-img" alt="Services and Facilities Image">
+                <div class="card-overlay">
+                  <h4><a href="services/service-and-facilities.html" class="stretched-link">OPD</a>
+                  </h4>
+
+                </div>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Services and Facilities Card -->
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="service-card">
+                <img src="img/DAPPMC/OPD/DSC_0124.JPG" class="card-img" alt="Services and Facilities Image">
+                <div class="card-overlay">
+                  <h4><a href="services/service-and-facilities.html" class="stretched-link">OPD</a>
+                  </h4>
+
+                </div>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- View More Link -->
+          <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="500">
+            <a href="services.html" class="read-more"><span>View Services</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="demo">
+      <div class="container">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Timeline Services</h2>
+        </div><!-- End Section Title -->
+        <div class="row" data-aos="fade-left">
+          <div class="span12">
+            <div id="owl-example" class="owl-carousel owl-theme">
+              <div class="item">
+                <img src="img/post/458610002_949388780538877_2034354375017105363_n.jpg" class="glightbox-post-content">
+                <a href="">DAPPMC New Teacher Health Package</a>
+              </div>
+              <div class="item">
+                <img src="img/post/458627007_949387230539032_343604350541317832_n.jpg" class="glightbox-post-content">
+                <a href="">Are you in need of a laboratory diagnostic test?</a>
+              </div>
+              <div class="item">
+                <img src="img/post/458607995_949387733872315_2899610098112197644_n.jpg" class="glightbox-post-content">
+                <a href="">Dr. Arturo P. Pingoy Medical Center is now an accredited Acute Stroke-Ready Hospital.</a>
+              </div>
+
+              <div class="item">
+                <img src="img/post/458695078_949388330538922_5096498770365843628_n.jpg" class="glightbox-post-content">
+                <h4>3D Acceleration.</h4>
+              </div>
+
+              <div class="item">
+                <img src="img/post/458726179_949386647205757_345765695023134934_n.jpg" class="glightbox-post-content">
+                <h4>Owls on page.</h4>
+              </div>
+
+              <div class="item">
+                <img src="img/post/458805289_949390067205415_1723638821156632966_n.jpg" class="glightbox-post-content">
+                <h4>Browsers Compatibility</h4>
+              </div>
+
+              <div class="item">
+                <img src="img/post/458695078_949388330538922_5096498770365843628_n.jpg" class="glightbox-post-content">
+                <h4>Browsers Compatibility</h4>
+              </div>
+
+              <div class="item">
+                <img src="img/post/458610002_949388780538877_2034354375017105363_n.jpg" class="glightbox-post-content">
+                <h4>The way you you like</h4>
+              </div>
+
+              <div class="item">
+                <img src="img/post/458610002_949388780538877_2034354375017105363_n.jpg" class="glightbox-post-content">
+                <h4>As a feather</h4>
+              </div>
+
+              <div class="item">
+                <img src="img/post/458610002_949388780538877_2034354375017105363_n.jpg" class="glightbox-post-content">
+                <h4>of options</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- stubs section -->
+    <!-- <section class="dark-background fade-up">
+      <div class="footer-subs">
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-6">
+              <h4>Submit Your Email Here!</h4>
+              <p>Subscribe to our Website and receive the latest news about our daily updates and services!</p>
+              <form action="forms/newsletter.php" method="post" class="php-email-form">
+                <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe">
+                </div>
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <style>
+      #subscribe {
+        padding: 30px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      #subscribe h2 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      #subscribe p {
+        font-size: 16px;
+        margin-bottom: 25px;
+      }
+
+      #subscribe form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center the input and button */
+      }
+
+      #subscribe input[type="email"] {
+        padding: 12px 15px;
+        width: 300px;
+        /* Adjust the width as needed */
+        border: 1px solid #d9d9d9;
+        border-radius: 5px;
+        outline: none;
+        /* Remove the default outline */
+      }
+
+      #subscribe button {
+        padding: 12px 25px;
+        background-color: #C6B350;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease-in-out;
+        /* Add a hover effect */
+      }
+
+      #subscribe button:hover {
+        background-color: #023878;
+        color: #fff;
+      }
+    </style>
+    <section id="subscribe" class="container" data-aos="fade-up">
+      <h2>Subscribe to Our Timeline Services</h2>
+      <p>Stay updated with the latest service and offers.</p>
+      <form action="#" method="post">
+        <input type="email" name="email" style="height: 50px; text-align: center;color: #023878;"
+          placeholder="Enter your email address" required>
+        <button type="submit" data-aos="fade-up" data-aos-delay="200">Subscribe</button>
+      </form>
+    </section>
+    <!-- php script -->
+    <!-- <?php
+  // Get the form data
+  $email = $_POST['email'];
+  
+  // Database connection details
+  $host = 'your_database_host';
+  $dbUsername = 'your_username';
+  $dbPassword = 'your_password';
+  $dbName = 'your_database_name';
+  
+  // Create a connection
+  $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+  
+  // Check connection
+  if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+  }
+  
+  // Prepare the SQL statement
+  $sql = "INSERT INTO subscribers (email) VALUES (?)";
+  
+  // Prepare and bind the parameters
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("s", $email);
+  
+  // Execute the statement
+  if ($stmt->execute()) {
+  echo "You have been subscribed successfully.";
+  } else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+  
+  // Close the statement and the connection
+  $stmt->close();
+  $conn->close();
+  ?> -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section  light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>What client says about us.</h2>
+      </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="img/DAPPMC FINAL LOGO login.png" class="testimonial-img" alt="">
+                <h3>Chrisvie John Rivera</h3>
+                <!-- <h4>Ceo &amp; Founder</h4> -->
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Salamat Sa serbisyo.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="img/DAPPMC FINAL LOGO login.png" class="testimonial-img" alt="">
+                <h3>Chrisvie John Rivera</h3>
+                <!-- <h4>Ceo &amp; Founder</h4> -->
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Salamat Sa serbisyo.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- /Testimonials Section -->
+  </main>
+  <script src="script/footer.js"></script>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="img/DAPPMC FINAL LOGO login.png" alt="Loading..." />
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- owl -->
+  <script src="assets/js/jquery-1.9.1.min.js"></script>
+  <script src="owl-carousel/owl.carousel.js"></script>
+  <script>
+    jQuery(document).ready(function ($) {
+      $("#owl-example").owlCarousel();
+    });
+
+    $("body").data("page", "frontpage");
+
+  </script>
+  <script src="assets/js/bootstrap-collapse.js"></script>
+  <script src="assets/js/bootstrap-transition.js"></script>
+
+  <script src="assets/js/google-code-prettify/prettify.js"></script>
+  <script src="assets/js/application.js"></script>
+  <script>
+
+
+  </script>
+</body>
+
 </html>
